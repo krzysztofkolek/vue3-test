@@ -1,0 +1,24 @@
+asd: {{data === undefined}} 123 {{data}}
+
+
+
+<template v-if="catApiData != undefined">
+    data != undefined
+    
+asd: {{data === undefined}} 123
+
+
+</template>
+<template v-if="catApiData == undefined">
+    undefined
+    {{data}}
+</template>
+
+<ul id="example-1">
+    <li v-for="cat in data.data" v-bind:key="cat.id">
+        "'{{cat.url}}'"
+        <li>
+            <img v-bind:src="cat.url" width="200" />
+        </li>
+    </li>
+</ul>
