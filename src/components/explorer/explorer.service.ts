@@ -60,14 +60,14 @@ export class CatApiDataContainer
   }
 }
 
-export default class AccordionService {
+export default class ExplorerService {
   getCats = async (): Promise<CatApiDataContainer> => {
     console.log("test");
     try{
       axios.defaults.headers.common["x-api-key"] = "45365c9b-c2bf-4c89-9a13-f0d64bfdc1e5";
 
       var queryParams: IQueryParams = {
-        limit: 3,
+        limit: 2,
         order: "RANDOM",
         page: 100,
       };

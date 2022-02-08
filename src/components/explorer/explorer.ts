@@ -1,5 +1,5 @@
 import { Options, Vue } from "vue-class-component";
-import AccordionService, { CatApiDataContainer } from "./accordion.service";
+import ExplorerService, { CatApiDataContainer } from "./explorer.service";
 @Options({
   props: {
     isLoading: {
@@ -9,10 +9,10 @@ import AccordionService, { CatApiDataContainer } from "./accordion.service";
     catApiData: CatApiDataContainer
   }
 })
-export default class Accordion extends Vue {
+export default class Explorer extends Vue {
   isLoading!: boolean;
   catApiData!: CatApiDataContainer;
-  accordionService: AccordionService = new AccordionService();
+  service: ExplorerService = new ExplorerService();
 
   data() {
     return {
@@ -21,7 +21,7 @@ export default class Accordion extends Vue {
   }
 
   async created() {
-    const cats: CatApiDataContainer = await this.accordionService.getCats();
+    const cats: CatApiDataContainer = await this.service.getCats();
     this.data = Object.assign({}, this.data, cats);
   }
 }

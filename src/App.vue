@@ -1,16 +1,16 @@
 <template>
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-  <Accordion/>
+  <Explorer/>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
 import HelloWorld from './components/HelloWorld.vue';
-import Accordion from './components/accordion/accordion.vue';
+import Explorer from './components/explorer/explorer.vue';
 
 @Options({
   components: {
-    Accordion,
+    Explorer,
   },
 })
 export default class App extends Vue {}
