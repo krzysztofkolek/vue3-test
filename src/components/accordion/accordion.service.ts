@@ -60,8 +60,6 @@ export class CatApiDataContainer
   }
 }
 
-
-
 export default class AccordionService {
   getCats = async (): Promise<CatApiDataContainer> => {
     console.log("test");
@@ -70,11 +68,11 @@ export default class AccordionService {
 
       var queryParams: IQueryParams = {
         limit: 3,
-        order: "Desc",
+        order: "RANDOM",
         page: 100,
       };
 
-      let response : ICatApiResponse = await axios.get("https://api.thecatapi.com/v1/images/search", { params: queryParams } );
+      let response: ICatApiResponse = await axios.get("https://api.thecatapi.com/v1/images/search", { params: queryParams } );
 
       return new CatApiDataContainer().set(response.data);
 
